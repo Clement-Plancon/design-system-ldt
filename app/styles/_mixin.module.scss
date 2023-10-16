@@ -1,0 +1,91 @@
+/* MIXIN */
+
+/* Taille */
+@mixin size($width: 100%, $height: 100%) {
+    width: $width;
+    height: $height;
+}
+
+/* Affichage - flex */
+@mixin flex( $justifyContent, $alignItems) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+/* Affichage - grille */
+@mixin grid($template-columns: auto, $template-rows: auto) {
+    display: grid;
+    grid-template-columns: $template-columns;
+    grid-template-rows: $template-rows;
+}
+
+/* Marge */
+@mixin margin($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+}
+
+/* Padding */
+@mixin padding($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+}
+
+/* Police de texte */
+@mixin font($size: 16px, $weight: normal, $color: #000) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+/* Bordure */
+@mixin border($width: 1px, $style: solid, $color: #000) {
+    border-width: $width;
+    border-style: $style;
+    border-color: $color;
+}
+
+/* Angle bordure */
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+  }
+  
+/* Fond */
+@mixin background($color: transparent, $image: none) {
+    background-color: $color;
+    background-image: $image;
+}
+
+/* Animation */
+@mixin animation($duration: 1s, $timing-function: ease, $delay: 0s) {
+    animation-duration: $duration;
+    animation-timing-function: $timing-function;
+    animation-delay: $delay;
+}
+
+/* GTexte multiligne */
+@mixin multiline-text($line-height: 1.5, $overflow: ellipsis) {
+    white-space: nowrap;
+    overflow: $overflow;
+    text-overflow: $overflow;
+    line-height: $line-height;
+}
+
+/* Transforme */
+@mixin transform($transforms...) {
+    transform: join($transforms, " ");
+}
+
+/* Transition */
+@mixin transition($property: all, $duration: 0.3s, $timing-function: ease) {
+    transition: $property $duration $timing-function;
+}
+
