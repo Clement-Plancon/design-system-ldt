@@ -2,7 +2,7 @@
 import Badge from "./components/Badge/Badge";
 import Button from "./components/Button/Button";
 import Checkbox from "./components/Checkbox/Checkbox";
-import DestructiveButton from "./components/DesctructiveButton/DestructiveButton";
+import DestructiveButton from "./components/DestructiveButton/DestructiveButton";
 import Tab from "./components/Tab/Tab";
 import TabText from "./components/TabText/TabText";
 import TextArea from "./components/TextArea/TextArea";
@@ -36,6 +36,9 @@ export default function Home() {
       <Checkbox label='checkbox'></Checkbox>
       <h1>Composant - TextArea</h1>
       <TextArea value="text area" onChange={function (value: string): void {
+        throw new Error("Function not implemented.");
+      }}></TextArea>
+      <TextArea value="text area" error={true} onChange={function (value: string): void {
         throw new Error("Function not implemented.");
       }}></TextArea>
     </main>

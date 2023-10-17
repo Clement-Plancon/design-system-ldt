@@ -32,18 +32,15 @@ const TextArea: React.FC<TextAreaProps> = ({
   };
 
   const getTextAreaClasses = () => {
-    const baseClass = `${styles['textarea-default']} ${styles['textarea__block--default']}`;
-    const errorClass = `${styles['textarea-error']} ${styles['textarea__block--error']}`;
+    const baseClass = `${styles['textarea-default__block']} ${styles['textarea-default__block--default']}`;
+    const errorClass =  `${styles['textarea-default-error__block']} ${styles['textarea-default-error__block--default']}`;
 
     if (error) {
-      return `${errorClass} ${filled ? styles['textarea__block--filled'] : ''} ${
-        disabled ? styles['textarea-disabled'] : ''
-      }`;
+      return `${errorClass} ${filled ? styles['textarea-default__block--filled'] : ''}`;
     }
 
-    return `${baseClass} ${isFocused ? styles['textarea-focus'] : ''} ${
-      filled ? styles['textarea__block--filled'] : ''
-    } ${disabled ? styles['textarea-disabled'] : ''}`;
+    return `${baseClass} ${isFocused ? styles['textarea-default__block--default--focus'] : ''} ${
+      filled ? styles['textarea-default__block--filled'] : ''}`;
   };
 
   return (

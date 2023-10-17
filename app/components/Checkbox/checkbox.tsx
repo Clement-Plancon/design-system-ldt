@@ -14,17 +14,18 @@ const Checkbox: React.FC<CheckboxProps> = ({ label }) => {
   };
 
   const checkboxClasses = isChecked
-    ? `${styles['checkbox-checked']} ${styles['checkbox__block--default']}`
-    : `${styles['checkbox-unchecked']} ${styles['checkbox__block--default']}`;
+    ? `${styles['checkbox-checked__block']} ${styles['checkbox-checked__block--default']}`
+    : `${styles['checkbox-unchecked__block']} ${styles['checkbox-unchecked__block--default']}`;
 
   return (
-    <label className={checkboxClasses}>
+    <label className={styles['checkbox-label']}>
       <input
         type="checkbox"
         checked={isChecked}
         onChange={handleChange}
         className={styles['checkbox-input']}
       />
+      <span className={checkboxClasses}></span>
       {label}
     </label>
   );

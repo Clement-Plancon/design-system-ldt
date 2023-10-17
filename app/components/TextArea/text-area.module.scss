@@ -52,35 +52,38 @@
 }
 
 .textarea-default-error {
+
     // Styles pour le bloc principal (champ de texte)
-    @include textarea-base-styles();
+    &__block {
+        @include textarea-base-styles();
 
-    &--default {
-        // Styles pour l'état par défaut erreur
-        color: map-get(map-get($textarea-error, default), color);
-        background-color: map-get(map-get($textarea-error, default), background-color);
-        border: map-get(map-get($textarea-error, default), border);
+        &--default {
+            // Styles pour l'état par défaut erreur
+            color: map-get(map-get($textarea-error, default), color);
+            background-color: map-get(map-get($textarea-error, default), background-color);
+            border: map-get(map-get($textarea-error, default), border);
 
-        &--filled {
-            // Styles pour l'état par filled error
-            color: map-get(map-get($textarea-error, filled), color);
-            background-color: map-get(map-get($textarea-error, filled), background-color);
-            border: map-get(map-get($textarea-error, filled), border);
-        }
+            &--filled {
+                // Styles pour l'état par filled error
+                color: map-get(map-get($textarea-error, filled), color);
+                background-color: map-get(map-get($textarea-error, filled), background-color);
+                border: map-get(map-get($textarea-error, filled), border);
+            }
 
-        &:hover {
-            // Styles pour l'état hover error
-            color: map-get(map-get($textarea-error, hover), color);
-            background-color: map-get(map-get($textarea-error, hover), background-color);
-            border: map-get(map-get($textarea-error, hover), border);
+            &:hover {
+                // Styles pour l'état hover error
+                color: map-get(map-get($textarea-error, hover), color);
+                background-color: map-get(map-get($textarea-error, hover), background-color);
+                border: map-get(map-get($textarea-error, hover), border);
 
-        }
+            }
 
-        &:focus {
-            // Styles pour l'état focus error
-            color: map-get(map-get($textarea-error, focus), color);
-            background-color: map-get(map-get($textarea-error, focus), background-color);
-            border: map-get(map-get($textarea-error, focus), border);
+            &:focus {
+                // Styles pour l'état focus error
+                color: map-get(map-get($textarea-error, focus), color);
+                background-color: map-get(map-get($textarea-error, focus), background-color);
+                border: map-get(map-get($textarea-error, focus), border);
+            }
         }
     }
 }
