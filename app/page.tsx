@@ -1,7 +1,7 @@
 'use client'
 import Badge from "./components/Badge/Badge";
 import Button from "./components/Button/Button";
-import Checkbox from "./components/Checkbox/checkbox";
+import Checkbox from "./components/Checkbox/Checkbox";
 import DestructiveButton from "./components/DesctructiveButton/DestructiveButton";
 import Tab from "./components/Tab/Tab";
 import TabText from "./components/TabText/TabText";
