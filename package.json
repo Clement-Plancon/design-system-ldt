@@ -1,6 +1,6 @@
 {
   "name": "design-system-ldt",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "dist/bundle.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -11,10 +11,12 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "peerDependencies": {
+    "react": "latest",
+    "react-dom": "latest"
+  },
   "dependencies": {
     "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
     "sass": "^1.68.0"
   },
   "devDependencies": {
