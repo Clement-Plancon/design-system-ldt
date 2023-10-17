@@ -1,12 +1,13 @@
 {
   "name": "design-system-ldt",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "main": "dist/bundle.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "next dev -p 5050",
+    "tsc": "tsc",
     "build": "next build",
-    "lib-build": "webpack",
+    "lib-build": "npm run tsc && webpack",
     "start": "next start",
     "lint": "next lint"
   },
