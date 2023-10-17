@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './tab.module.scss';
 
-interface TabProps {
+export interface TabProps {
   label: string;
 }
 

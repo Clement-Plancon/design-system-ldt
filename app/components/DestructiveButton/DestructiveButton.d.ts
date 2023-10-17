@@ -7,7 +7,7 @@ declare module './destructive-button.module.scss' {
   export = styles;
 }
 
-interface DestructiveButtonProps {
+export interface DestructiveButtonProps {
   buttonText: string;
   buttonType: 'primary' | 'secondary' | 'tertiary';
   borderless?: boolean;

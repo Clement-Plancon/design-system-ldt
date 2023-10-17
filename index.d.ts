@@ -2,10 +2,9 @@
 
 // Import types
 import { BadgeProps } from './app/components/Badge/Badge';
-import { ButtonProps } from './app/components/Button/Button';
+import { ButtonProps }  from './app/components/Button/Button';
 import { CheckboxProps } from './app/components/Checkbox/Checkbox';
 import { DestructiveButtonProps } from './app/components/DestructiveButton/DestructiveButton';
-import { ModeSwitchProps } from './app/components/ModeSwitch/ModeSwitch';
 import { TabProps } from './app/components/Tab/Tab';
 import { TabTextProps } from './app/components/TabText/TabText';
 import { TextAreaProps } from './app/components/TextArea/TextArea';
@@ -16,7 +15,6 @@ export {
   ButtonProps,
   CheckboxProps,
   DestructiveButtonProps,
-  ModeSwitchProps,
   TabProps,
   TabTextProps,
   TextAreaProps,
@@ -40,7 +38,7 @@ declare module './app/components/DestructiveButton/DestructiveButton' {
 }
 
 declare module './app/components/ModeSwitch/ModeSwitch' {
-  export default function ModeSwitch(props: ModeSwitchProps): JSX.Element;
+  export default function ModeSwitch(): JSX.Element;
 }
 
 declare module './app/components/Tab/Tab' {

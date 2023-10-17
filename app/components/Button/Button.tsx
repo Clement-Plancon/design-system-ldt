@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './button.module.scss'
 
-interface ButtonProps {
+export interface ButtonProps {
   buttonText: string;
   buttonType: 'primary' | 'secondary' | 'tertiary';
   borderless?: boolean;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './destructive-button.module.scss';
 
-interface DestructiveButtonProps {
+export interface DestructiveButtonProps {
   buttonText: string;
   buttonType: 'primary' | 'secondary' | 'tertiary';
   borderless?: boolean;

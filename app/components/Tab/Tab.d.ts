@@ -6,6 +6,7 @@ declare module './tab.module.scss' {
   };
   export = styles;
 }
+export interface TabProps {}
 
 declare const Tab: React.FC<{ label: string }>;
 

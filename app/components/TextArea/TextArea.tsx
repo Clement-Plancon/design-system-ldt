@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './text-area.module.scss';
 
-interface TextAreaProps {
+export interface TextAreaProps {
   value: string;
   onChange: (value: string) => void;
   error?: boolean;

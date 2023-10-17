@@ -7,7 +7,7 @@ declare module './checkbox.module.scss' {
   export = styles;
 }
 
-interface CheckboxProps {
+export interface CheckboxProps {
   label: string;
 }
 

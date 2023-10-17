@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import styles from './checkbox.module.scss';
 
-interface CheckboxProps {
+export interface CheckboxProps {
   label: string;
 }
 

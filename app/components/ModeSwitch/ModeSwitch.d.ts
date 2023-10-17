@@ -6,7 +6,7 @@ declare module './mode-switch.module.scss' {
   };
   export = styles;
 }
-
+export interface ModeSwitchProps {}
 declare const ModeSwitch: React.FC;
 
 export default ModeSwitch;

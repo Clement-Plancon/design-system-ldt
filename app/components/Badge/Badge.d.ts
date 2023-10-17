@@ -7,7 +7,7 @@ declare module './badge.module.scss' {
   export = styles;
 }
 
-interface BadgeProps {
+export interface BadgeProps {
   text: string;
   badgeType: 'warning' | 'in-progress' | 'success' | 'error' | 'personnalized';
 }

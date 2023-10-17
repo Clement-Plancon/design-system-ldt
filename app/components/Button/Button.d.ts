@@ -7,7 +7,7 @@ declare module './button.module.scss' {
   export = styles;
 }
 
-interface ButtonProps {
+export interface ButtonProps {
   buttonText: string;
   buttonType: 'primary' | 'secondary' | 'tertiary';
   borderless?: boolean;

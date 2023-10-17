@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './badge.module.scss';
 
-interface BadgeProps {
+export interface BadgeProps {
   text: string;
   badgeType: 'warning' | 'in-progress' | 'success' | 'error' | 'personnalized';
 }

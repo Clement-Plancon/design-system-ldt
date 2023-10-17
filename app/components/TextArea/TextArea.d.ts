@@ -9,6 +9,8 @@ declare module 'TextArea' {
     disabled?: boolean;
   }
 
+  export interface TabAreaProps {}
+
   const TextArea: React.FC<TextAreaProps>;
 
   export default TextArea;

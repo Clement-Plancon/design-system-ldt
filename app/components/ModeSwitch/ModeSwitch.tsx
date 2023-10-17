@@ -5,6 +5,7 @@ import sunInactiveIcon from '../../src/images/mode-switch/sun-off.svg';
 import moonInactiveIcon from '../../src/images/mode-switch/moon-off.svg';
 import styles from './mode-switch.module.scss';
 
+
 const ModeSwitch = () => {
   const [isLightMode, setIsLightMode] = useState(true);
 
