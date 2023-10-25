@@ -2,14 +2,17 @@
 import React, { useState } from 'react';
 import styles from './checkbox.module.scss';
 
-export interface CheckboxProps {
+export interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({ label }) => {
-  const [isChecked, setIsChecked] = useState(false);
+const Checkbox: React.FC<CheckboxProps> = ({ label, checked: propChecked, onChange: propOnChange, ...props }) => {
+  const [isChecked, setIsChecked] = useState(propChecked || false);
 
-  const handleChange = () => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (propOnChange) {
+      propOnChange(e);
+    }
     setIsChecked(!isChecked);
   };
 
@@ -24,6 +27,7 @@ const Checkbox: React.FC<CheckboxProps> = ({ label }) => {
         checked={isChecked}
         onChange={handleChange}
         className={styles['checkbox-input']}
+        {...props}
       />
       <span className={checkboxClasses}></span>
       {label}

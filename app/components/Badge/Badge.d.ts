@@ -7,7 +7,7 @@ declare module './badge.module.scss' {
   export = styles;
 }
 
-export interface BadgeProps {
+export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   text: string;
   badgeType: 'warning' | 'in-progress' | 'success' | 'error' | 'personnalized';
 }

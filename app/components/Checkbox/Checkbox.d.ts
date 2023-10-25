@@ -7,7 +7,7 @@ declare module './checkbox.module.scss' {
   export = styles;
 }
 
-export interface CheckboxProps {
+export interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
 }
 

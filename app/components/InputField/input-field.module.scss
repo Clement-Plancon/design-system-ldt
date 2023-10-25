@@ -1,0 +1,83 @@
+@import "../../styles/mixin.module";
+@import "../../styles/variable.module";
+
+// Création d'un mixin pour les styles de base de l'input-field
+@mixin input-field-base-styles() {
+    @include size();
+    @include padding(1rem, 2rem, 1rem, 2rem);
+    @include border-radius(8px);
+}
+
+/* Classe BEM pour l'input-field par défaut */
+.input-field-default {
+    
+    &__block {
+        @include input-field-base-styles();
+
+        &--default {
+            color: map-get(map-get($input-field-default, placeholder), color);
+            background-color: map-get(map-get($input-field-default, placeholder), background-color);
+            border: map-get(map-get($input-field-default, placeholder), border);
+
+            &--filled {
+                color: map-get(map-get($input-field-default, filled), color);
+                background-color: map-get(map-get($input-field-default, filled), background-color);
+                border: map-get(map-get($input-field-default, filled), border);
+            }
+
+            &:hover {
+                color: map-get(map-get($input-field-default, hover), color);
+                background-color: map-get(map-get($input-field-default, hover), background-color);
+                border: map-get(map-get($input-field-default, hover), border);
+            }
+
+            &:focus {
+                color: map-get(map-get($input-field-default, focus), color);
+                background-color: map-get(map-get($input-field-default, focus), background-color);
+                border: map-get(map-get($input-field-default, focus), border);
+            }
+
+            &:disabled {
+                color: map-get(map-get($input-field-default, disabled), color);
+                background-color: map-get(map-get($input-field-default, disabled), background-color);
+                border: map-get(map-get($input-field-default, disabled), border);
+            }
+        }
+    }
+}
+
+.input-field-default-error {
+    &__block {
+        @include input-field-base-styles();
+
+        &--default {
+            color: map-get(map-get($input-field-error, placeholder), color);
+            background-color: map-get(map-get($input-field-error, placeholder), background-color);
+            border: map-get(map-get($input-field-error, placeholder), border);
+
+            &--filled {
+                color: map-get(map-get($input-field-error, filled), color);
+                background-color: map-get(map-get($input-field-error, filled), background-color);
+                border: map-get(map-get($input-field-error, filled), border);
+            }
+
+            &:hover {
+                color: map-get(map-get($input-field-error, hover), color);
+                background-color: map-get(map-get($input-field-error, hover), background-color);
+                border: map-get(map-get($input-field-error, hover), border);
+            }
+
+            &:focus {
+                color: map-get(map-get($input-field-error, focus), color);
+                background-color: map-get(map-get($input-field-error, focus), background-color);
+                border: map-get(map-get($input-field-error, focus), border);
+            }
+
+            &:disabled {
+                color: map-get(map-get($input-field-error, disabled), color);
+                background-color: map-get(map-get($input-field-error, disabled), background-color);
+                border: map-get(map-get($input-field-error, disabled), border);
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+@import "../../styles/mixin.module";
+@import "../../styles/variable.module";
+
+@mixin input-dropdown-base-styles() {
+  @include size();
+  @include padding(1rem, 2rem, 1rem, 2rem);
+  @include border-radius(8px);
+}
+
+
+.input-dropdown{
+  height: 1000px;
+  background: red;
+}
+
+.input-dropdown-default {
+  &__block {
+    @include input-dropdown-base-styles();
+
+    &--default {
+      color: map-get(map-get($input-dropdown-default, placeholder), color);
+      background-color: map-get(map-get($input-dropdown-default, placeholder), background-color);
+      border: map-get(map-get($input-dropdown-default, placeholder), border);
+
+      &--filled {
+        color: map-get(map-get($input-dropdown-default, filled), color);
+        background-color: map-get(map-get($input-dropdown-default, filled), background-color);
+        border: map-get(map-get($input-dropdown-default, filled), border);
+      }
+
+      &:hover {
+        color: map-get(map-get($input-dropdown-default, hover), color);
+        background-color: map-get(map-get($input-dropdown-default, hover), background-color);
+        border: map-get(map-get($input-dropdown-default, hover), border);
+      }
+
+      &:focus {
+        color: map-get(map-get($input-dropdown-default, focus), color);
+        background-color: map-get(map-get($input-dropdown-default, focus), background-color);
+        border: map-get(map-get($input-dropdown-default, focus), border);
+      }
+
+      &:disabled {
+        color: map-get(map-get($input-dropdown-default, disabled), color);
+        background-color: map-get(map-get($input-dropdown-default, disabled), background-color);
+        border: map-get(map-get($input-dropdown-default, disabled), border);
+      }
+    }
+  }
+}
+
+.input-dropdown-default-error {
+  &__block {
+    @include input-dropdown-base-styles();
+
+    &--default {
+      color: map-get(map-get($input-dropdown-error, placeholder), color);
+      background-color: map-get(map-get($input-dropdown-error, placeholder), background-color);
+      border: map-get(map-get($input-dropdown-error, placeholder), border);
+
+      &--filled {
+        color: map-get(map-get($input-dropdown-error, filled), color);
+        background-color: map-get(map-get($input-dropdown-error, filled), background-color);
+        border: map-get(map-get($input-dropdown-error, filled), border);
+      }
+
+      &:hover {
+        color: map-get(map-get($input-dropdown-error, hover), color);
+        background-color: map-get(map-get($input-dropdown-error, hover), background-color);
+        border: map-get(map-get($input-dropdown-error, hover), border);
+      }
+
+      &:focus {
+        color: map-get(map-get($input-dropdown-error, focus), color);
+        background-color: map-get(map-get($input-dropdown-error, focus), background-color);
+        border: map-get(map-get($input-dropdown-error, focus), border);
+      }
+
+      &:disabled {
+        color: map-get(map-get($input-dropdown-error, disabled), color);
+        background-color: map-get(map-get($input-dropdown-error, disabled), background-color);
+        border: map-get(map-get($input-dropdown-error, disabled), border);
+      }
+    }
+  }
+}
+

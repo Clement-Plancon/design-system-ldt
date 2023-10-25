@@ -16,7 +16,17 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: ['file-loader']
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/',
+              publicPath: 'images/',
+              esModule: true
+            },
+          }
+        ]
       },
     ],
   },

@@ -1,27 +1,26 @@
 import React, { useState } from 'react';
 import styles from './text-area.module.scss';
 
-export interface TextAreaProps {
+export interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   value: string;
-  onChange: (value: string) => void;
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   error?: boolean;
   filled?: boolean;
-  disabled?: boolean;
 }
 
 const TextArea: React.FC<TextAreaProps> = ({
   value,
-  onChange,
+  onChange,  // Le gestionnaire d'événements d'origine
   error = false,
   filled = false,
-  disabled = false,
+  className,
+  ...props
 }) => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const newValue = event.target.value;
-    onChange(newValue);
-  };
+    onChange(event);  // Passez l'événement complet à onChange
+};
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -45,12 +44,12 @@ const TextArea: React.FC<TextAreaProps> = ({
 
   return (
     <textarea
-      className={getTextAreaClasses()}
+      className={`${getTextAreaClasses()} ${className || ''}`}  // Utiliser une valeur par défaut pour éviter undefined
       value={value}
-      onChange={handleInputChange}
+      onChange={handleInputChange}  // Utilisez handleInputChange ici
       onFocus={handleFocus}
       onBlur={handleBlur}
-      disabled={disabled}
+      {...props}
     />
   );
 };

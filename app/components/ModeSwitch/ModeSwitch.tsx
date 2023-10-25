@@ -5,8 +5,9 @@ import sunInactiveIcon from '../../src/images/mode-switch/sun-off.svg';
 import moonInactiveIcon from '../../src/images/mode-switch/moon-off.svg';
 import styles from './mode-switch.module.scss';
 
+export interface ModeSwitchProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-const ModeSwitch = () => {
+const ModeSwitch: React.FC<ModeSwitchProps> = ({ className, ...props }) => {
   const [isLightMode, setIsLightMode] = useState(true);
 
   useEffect(() => {
@@ -28,7 +29,11 @@ const ModeSwitch = () => {
   };
 
   return (
-    <div className={`mode-switch ${isLightMode ? 'light-mode' : 'dark-mode'}`} onClick={toggleMode}>
+    <div 
+      className={`mode-switch ${isLightMode ? 'light-mode' : 'dark-mode'} ${className}`} 
+      onClick={toggleMode}
+      {...props}
+    >
       <img
         src={isLightMode ? moonActiveIcon : sunActiveIcon}
         alt={isLightMode ? 'Dark Mode' : 'Light Mode'}

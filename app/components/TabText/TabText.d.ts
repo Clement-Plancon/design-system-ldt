@@ -7,8 +7,10 @@ declare module './tab-text.module.scss' {
   export = styles;
 }
 
-export interface TabTextProps {}
+export interface TabTextProps extends React.HTMLAttributes<HTMLDivElement> {
+  label: string;
+}
 
-declare const TabText: React.FC<{ label: string }>;
+declare const TabText: React.FC<TabTextProps>;
 
 export default TabText;

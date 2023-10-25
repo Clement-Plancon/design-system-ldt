@@ -308,7 +308,7 @@
    $badge: (
       warning: (
         color: #B34000,
-        background-color: #FFE8E5
+        background-color: #FFEEE5
       ),
       in-progress: (
         color: #0063CB,
@@ -383,7 +383,7 @@
         border:1px solid #CE0500,
       ),
       hover: (
-        color: #FFF,
+        color: #667085,
         background-color: #EAECF0,
         border:1px solid #CE0500,
       ),
@@ -399,7 +399,196 @@
       ),
     );
 
-  
+  /* --------------- TOAST --------------- */
+  $toast: (
+    success: (
+      color: #18753C,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    error: (
+      color: #CE0500,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    warning: (
+      color: #B34000,
+      background-color: #EAECF0,
+      border:1px solid #D0D5DD,
+    ),
+    info: (
+      color: #0063CB,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    misc: (
+      color: #475467,
+      background-color: #F2F4F7,
+      border:1px solid #D0D5DD,
+    ),
+  );
+
+  /* --------------- INPUT FIELD --------------- */
+  $input-field-default: (
+    placeholder: (
+      color: #667085,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    filled: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    hover: (
+      color: #667085,
+      background-color: #EAECF0,
+      border:1px solid #D0D5DD,
+    ),
+    focus: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #6A6AF4,
+    ),
+    disabled: (
+      color: #98A2B3,
+      background-color: #F2F4F7,
+      border:1px solid #F2F4F7,
+    ),
+  );
+
+  $input-field-error: (
+    placeholder: (
+      color: #667085,
+      background-color: #FFF,
+      border:1px solid #CE0500,
+    ),
+    filled: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #CE0500,
+    ),
+    hover: (
+      color: #667085,
+      background-color: #EAECF0,
+      border:1px solid #CE0500,
+    ),
+    focus: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #CE0500,
+    ),
+    disabled: (
+      color: #98A2B3,
+      background-color: #F2F4F7,
+      border:1px solid #CE0500,
+    ),
+  );
+
+   /* --------------- INPUT DROPDOWN --------------- */
+   $input-dropdown-default: (
+    placeholder: (
+      color: #667085,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    filled: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    hover: (
+      color: #667085,
+      background-color: #EAECF0,
+      border:1px solid #D0D5DD,
+    ),
+    focus: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #6A6AF4,
+    ),
+    disabled: (
+      color: #98A2B3,
+      background-color: #F2F4F7,
+      border:1px solid #F2F4F7,
+    ),
+  );
+
+  $input-dropdown-error: (
+    placeholder: (
+      color: #667085,
+      background-color: #FFF,
+      border:1px solid #CE0500,
+    ),
+    filled: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #CE0500,
+    ),
+    hover: (
+      color: #667085,
+      background-color: #EAECF0,
+      border:1px solid #CE0500,
+    ),
+    focus: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #CE0500,
+    ),
+    disabled: (
+      color: #98A2B3,
+      background-color: #F2F4F7,
+      border:1px solid #CE0500,
+    ),
+  );
+
+  /* --------------- CHIP --------------- */
+  $chip-checkbox: (
+    default: (
+      color: #475467,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    hover: (
+      color: #475467,
+      background-color: #EAECF0,
+      border:1px solid #D0D5DD,
+    ),
+    selected: (
+      color: #000091,
+      background-color: #ECECFE,
+      border:1px solid #6A6AF4,
+    ),
+    disabled: (
+      color: #98A2B3,
+      background-color: #F2F4F7,
+      border:1px solid #EAECF0,
+    ),
+  );
+
+  $chip-radio: (
+    default: (
+      color: #475467,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    hover: (
+      color: #475467,
+      background-color: #EAECF0,
+      border:1px solid #D0D5DD,
+    ),
+    selected: (
+      color: #000091,
+      background-color: #ECECFE,
+      border:1px solid #6A6AF4,
+    ),
+    disabled: (
+      color: #98A2B3,
+      background-color: #F2F4F7,
+      border:1px solid #EAECF0,
+    ),
+  );
+
    /* ----------------------- COLOR DARK MODE ------------------------ */
   
    /* basis darkmode */

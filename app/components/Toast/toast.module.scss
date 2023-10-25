@@ -1,0 +1,58 @@
+@import "../../styles/mixin.module";
+@import "../../styles/variable.module";
+
+@mixin toast-base-styles() {
+    @include size();
+    @include padding(1rem, 2rem, 1rem, 2rem);
+    @include border-radius(8px);
+}
+
+/* Classe BEM pour le toast par défaut */
+.toast {
+    &__block {
+        // Styles pour le bloc principal (toast)
+        @include toast-base-styles();
+
+        .toastIcon {
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        &--success {
+            // Styles pour l'état success
+            color: map-get(map-get($toast, success), color);
+            background-color: map-get(map-get($toast, success), background-color);
+            border: map-get(map-get($toast, success), border)
+        }
+
+        &--error {
+            // Styles pour l'état error
+            color: map-get(map-get($toast, error), color);
+            background-color: map-get(map-get($toast, error), background-color);
+            border: map-get(map-get($toast, error), border);
+        }
+
+        &--warning {
+
+            // Styles pour l'état warning
+            color: map-get(map-get($toast, warning), color);
+            background-color: map-get(map-get($toast, warning), background-color);
+            border: map-get(map-get($toast, warning), border);
+        }
+
+        &--info {
+            // Styles pour l'état info
+            color: map-get(map-get($toast, info), color);
+            background-color: map-get(map-get($toast, info), background-color);
+            border: map-get(map-get($toast, info), border);
+        }
+
+        &--misc {
+            // Styles pour l'état misc
+            color: map-get(map-get($toast, misc), color);
+            background-color: map-get(map-get($toast, misc), background-color);
+            border: map-get(map-get($toast, misc), border);
+
+        }
+    }
+}

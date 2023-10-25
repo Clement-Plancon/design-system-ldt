@@ -1,17 +1,20 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 
-declare module 'TextArea' {
-  interface TextAreaProps {
-    value: string;
-    onChange: (value: string) => void;
-    error?: boolean;
-    filled?: boolean;
-    disabled?: boolean;
-  }
-
-  export interface TabAreaProps {}
-
-  const TextArea: React.FC<TextAreaProps>;
-
-  export default TextArea;
+declare module './text-area.module.scss' {
+  const styles: {
+    [key: string]: string;
+  };
+  export = styles;
 }
+
+export interface TextAreaProps {
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  error?: boolean;
+  filled?: boolean;
+  disabled?: boolean;
+}
+
+declare const TextArea: React.FC<TextAreaProps>;
+
+export default TextArea;

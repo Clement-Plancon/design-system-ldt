@@ -7,7 +7,7 @@ declare module './button.module.scss' {
   export = styles;
 }
 
-export interface ButtonProps {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   buttonText: string;
   buttonType: 'primary' | 'secondary' | 'tertiary';
   borderless?: boolean;

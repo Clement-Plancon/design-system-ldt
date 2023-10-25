@@ -6,8 +6,11 @@ declare module './tab.module.scss' {
   };
   export = styles;
 }
-export interface TabProps {}
 
-declare const Tab: React.FC<{ label: string }>;
+export interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
+  label: string;
+}
+
+declare const Tab: React.FC<TabProps>;
 
 export default Tab;

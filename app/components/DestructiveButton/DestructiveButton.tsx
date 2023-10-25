@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './destructive-button.module.scss';
 
-export interface DestructiveButtonProps {
+export interface DestructiveButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   buttonText: string;
   buttonType: 'primary' | 'secondary' | 'tertiary';
   borderless?: boolean;
@@ -26,13 +26,14 @@ function generateDestructiveButtonStyles(
   return baseStyles;
 }
 
-const DestructiveButton = ({ buttonText, buttonType, borderless }: DestructiveButtonProps) => {
+const DestructiveButton = ({ buttonText, buttonType, borderless, className, ...props }: DestructiveButtonProps) => {
   const buttonStyles = generateDestructiveButtonStyles(buttonType, borderless);
 
   const buttonClassNames = [
     buttonStyles[`${buttonType}Block`],
     buttonStyles[`${buttonType}Default`],
-  ];
+    className
+  ].filter(Boolean);
 
   // Si borderless est activé, ajoutez les styles correspondants
   if (borderless) {
@@ -42,11 +43,9 @@ const DestructiveButton = ({ buttonText, buttonType, borderless }: DestructiveBu
   }
 
   return (
-    <>
-      <button className={buttonClassNames.join(' ')}>
-        {buttonText}
-      </button>
-    </>
+    <button className={buttonClassNames.join(' ')} {...props}>
+      {buttonText}
+    </button>
   );
 }
 

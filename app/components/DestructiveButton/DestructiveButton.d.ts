@@ -7,7 +7,7 @@ declare module './destructive-button.module.scss' {
   export = styles;
 }
 
-export interface DestructiveButtonProps {
+export interface DestructiveButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   buttonText: string;
   buttonType: 'primary' | 'secondary' | 'tertiary';
   borderless?: boolean;
