@@ -19,7 +19,7 @@
       background-color: map-get(map-get($checkbox, unchecked), background-color);
       border: map-get(map-get($checkbox, unchecked), border);
 
-      // Styles spécifiques à la case à cocher (par exemple, un faux élément)
+      // Styles spécifiques à la case à cocher
       &::before {
         content: "";
         width: 60%;
@@ -44,7 +44,7 @@
       background-color: map-get(map-get($checkbox, checked), background-color);
       border: map-get(map-get($checkbox, checked), border);
 
-      // Styles spécifiques à la case à cocher cochée (par exemple, un faux élément)
+      // Styles spécifiques à la case à cocher cochée
       &::before {
         content: "✔"; 
         font-size: 12px; 
@@ -55,4 +55,18 @@
       }
     }
   }
+}
+
+.checkbox-label {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  padding-left: 30px;
+}
+
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
 }

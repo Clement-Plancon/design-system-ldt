@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './input-field.module.scss';
 
-interface InputFieldProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
+export interface InputFieldProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   placeholder: string;
   value: string;
   onChange: (value: string) => void;

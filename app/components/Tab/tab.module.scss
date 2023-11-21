@@ -2,7 +2,7 @@
 @import "../../styles/variable.module";
 
 @mixin tab-base-styles() {
-  @include size(30px, 50px);
+  @include size();
   @include flex(center, center);
   flex-direction: column;
   @include padding(1rem, 2rem, 1rem, 2rem);
@@ -26,8 +26,8 @@
         background-color: map-get(map-get($tab, hover), background-color);
         border: map-get(map-get($tab, hover), border);
       }
-      &:active {
-        // Styles pour l'état selection
+      &.active {
+        // Styles pour l'état active
         color: map-get(map-get($tab, selection), color);
         background-color: map-get(map-get($tab, selection), background-color);
         border: map-get(map-get($tab, selection), border);

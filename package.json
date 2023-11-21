@@ -1,6 +1,6 @@
 {
   "name": "design-system-ldt",
-  "version": "0.1.9",
+  "version": "0.1.7",
   "main": "dist/bundle.js",
   "types": "dist/index.d.ts",
   "scripts": {

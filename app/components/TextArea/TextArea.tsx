@@ -1,33 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './text-area.module.scss';
 
-export interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+export interface TextAreaProps extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'onChange'> {
   value: string;
-  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onChange: (value: string) => void;
   error?: boolean;
   filled?: boolean;
 }
 
 const TextArea: React.FC<TextAreaProps> = ({
   value,
-  onChange,  // Le gestionnaire d'événements d'origine
+  onChange,
   error = false,
   filled = false,
   className,
   ...props
 }) => {
-  const [isFocused, setIsFocused] = useState<boolean>(false);
+  const [textAreaValue, setTextAreaValue] = useState(value);
+
+  useEffect(() => {
+    setTextAreaValue(value);  // S'assurer que la valeur est synchronisée avec la prop value
+  }, [value]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    onChange(event);  // Passez l'événement complet à onChange
-};
-
-  const handleFocus = () => {
-    setIsFocused(true);
-  };
-
-  const handleBlur = () => {
-    setIsFocused(false);
+    const newValue = event.target.value;
+    setTextAreaValue(newValue);
+    onChange(newValue);
   };
 
   const getTextAreaClasses = () => {
@@ -38,17 +36,14 @@ const TextArea: React.FC<TextAreaProps> = ({
       return `${errorClass} ${filled ? styles['textarea-default__block--filled'] : ''}`;
     }
 
-    return `${baseClass} ${isFocused ? styles['textarea-default__block--default--focus'] : ''} ${
-      filled ? styles['textarea-default__block--filled'] : ''}`;
+    return `${baseClass} ${filled ? styles['textarea-default__block--filled'] : ''}`;
   };
 
   return (
     <textarea
-      className={`${getTextAreaClasses()} ${className || ''}`}  // Utiliser une valeur par défaut pour éviter undefined
-      value={value}
-      onChange={handleInputChange}  // Utilisez handleInputChange ici
-      onFocus={handleFocus}
-      onBlur={handleBlur}
+      className={`${getTextAreaClasses()} ${className || ''}`}
+      value={textAreaValue}
+      onChange={handleInputChange}
       {...props}
     />
   );

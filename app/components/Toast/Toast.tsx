@@ -1,6 +1,6 @@
 // Toast.tsx
-
-import React from 'react';
+'use client'
+import React, {useState} from 'react';
 import styles from './toast.module.scss';
 
 const successIcon = '/src/images/toast/success.svg';
@@ -14,11 +14,19 @@ export type ToastType = 'success' | 'error' | 'warning' | 'info' | 'misc';
 export interface ToastProps {
     type: ToastType;
     message: string;
+    messageAction: string;
     className?: string;
     onClick?: () => void;
 }
+const Toast: React.FC<ToastProps> = ({ type, message, messageAction, className = '', onClick }) => {
 
-const Toast: React.FC<ToastProps> = ({ type, message, className = '', onClick }) => {
+    const [toastVisible, setToastVisible] = useState(true);
+
+    // Si toastVisible est false, retournez null pour ne rien rendre.
+    if (!toastVisible) {
+        return null;
+    }
+
     const getToastClass = () => {
         switch(type) {
             case 'success':
@@ -47,11 +55,15 @@ const Toast: React.FC<ToastProps> = ({ type, message, className = '', onClick })
             case 'info':
                 return infoIcon;
             case 'misc':
-                return null;
+                return undefined;
             default:
-                return null;
+                return undefined;
         }
     };
+    
+    const deleteToast = () => {
+        setToastVisible(false);
+    }
 
     return (
         <div 
@@ -60,7 +72,8 @@ const Toast: React.FC<ToastProps> = ({ type, message, className = '', onClick })
         >
             <img src={getIconSrc()} alt={type} className={styles.toastIcon} /> 
             {message}
-            <img src={crossIcon} alt={'cross'} className={styles.toastIcon} /> 
+            <span className={styles['message-action']}>{messageAction}</span>
+            <img src={crossIcon} alt={'cross'} className={styles.toastIcon} onClick={() => deleteToast()} /> 
         </div>
     );
 };
