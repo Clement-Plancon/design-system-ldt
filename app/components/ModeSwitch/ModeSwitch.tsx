@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import sunActiveIcon from '../../src/images/mode-switch/sun-on.svg';
-import moonActiveIcon from '../../src/images/mode-switch/moon-on.svg';
-import sunInactiveIcon from '../../src/images/mode-switch/sun-off.svg';
-import moonInactiveIcon from '../../src/images/mode-switch/moon-off.svg';
+const sunActiveIcon = '/src/images/mode-switch/sun-on.svg';
+const moonActiveIcon = '/src/images/mode-switch/moon-on.svg';
+const sunInactiveIcon = '/src/images/mode-switch/sun-off.svg';
+const moonInactiveIcon = '/src/images/mode-switch/moon-off.svg';
 import styles from './mode-switch.module.scss';
 
 export interface ModeSwitchProps extends React.HTMLAttributes<HTMLDivElement> {}
