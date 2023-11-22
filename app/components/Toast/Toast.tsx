@@ -3,7 +3,7 @@
 import React, {useState} from 'react';
 import styles from './toast.module.scss';
 
-const successIcon = '/src/images/toast/success.svg';
+import successIcon from '../../../public/src/images/toast/success.svg';  // Chemin relatif mis à jour
 const errorIcon = '/src/images/toast/error.svg';
 const warningIcon = '/src/images/toast/warning.svg';
 const infoIcon = '/src/images/toast/information.svg';

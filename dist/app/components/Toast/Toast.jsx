@@ -2,7 +2,7 @@
 'use client';
 import React, { useState } from 'react';
 import styles from './toast.module.scss';
-var successIcon = '/src/images/toast/success.svg';
+import successIcon from '../../../public/src/images/toast/success.svg'; // Chemin relatif mis à jour
 var errorIcon = '/src/images/toast/error.svg';
 var warningIcon = '/src/images/toast/warning.svg';
 var infoIcon = '/src/images/toast/information.svg';
