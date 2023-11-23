@@ -1,4 +1,5 @@
-    # WIP
+# WIP
+
 # Design System du Laboratoire de Transformations du Ministère de l'Économie
 
 Le Design System du Laboratoire de Transformations du Ministère de l'Économie est une collection modulaire et évolutive d'outils de design et de composants UI/UX, créée pour accélérer le développement d'applications numériques au sein du Laboratoire de Transformations et des ministères économiques et financiers. Il propose une alternative allégée et plus flexible au Design System de l'État, tout en conservant une cohérence visuelle et fonctionnelle à travers les différents services et projets du ministère.
