@@ -11,25 +11,25 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import React, { useState, useEffect } from 'react';
 import styles from './text-area.module.scss';
-var TextArea = function (_a) {
-    var value = _a.value, onChange = _a.onChange, _b = _a.error, error = _b === void 0 ? false : _b, _c = _a.filled, filled = _c === void 0 ? false : _c, className = _a.className, props = __rest(_a, ["value", "onChange", "error", "filled", "className"]);
-    var _d = useState(value), textAreaValue = _d[0], setTextAreaValue = _d[1];
-    useEffect(function () {
+const TextArea = (_a) => {
+    var { value, onChange, error = false, filled = false, className } = _a, props = __rest(_a, ["value", "onChange", "error", "filled", "className"]);
+    const [textAreaValue, setTextAreaValue] = useState(value);
+    useEffect(() => {
         setTextAreaValue(value); // S'assurer que la valeur est synchronisée avec la prop value
     }, [value]);
-    var handleInputChange = function (event) {
-        var newValue = event.target.value;
+    const handleInputChange = (event) => {
+        const newValue = event.target.value;
         setTextAreaValue(newValue);
         onChange(newValue);
     };
-    var getTextAreaClasses = function () {
-        var baseClass = "".concat(styles['textarea-default__block'], " ").concat(styles['textarea-default__block--default']);
-        var errorClass = "".concat(styles['textarea-default-error__block'], " ").concat(styles['textarea-default-error__block--default']);
+    const getTextAreaClasses = () => {
+        const baseClass = `${styles['textarea-default__block']} ${styles['textarea-default__block--default']}`;
+        const errorClass = `${styles['textarea-default-error__block']} ${styles['textarea-default-error__block--default']}`;
         if (error) {
-            return "".concat(errorClass, " ").concat(filled ? styles['textarea-default__block--filled'] : '');
+            return `${errorClass} ${filled ? styles['textarea-default__block--filled'] : ''}`;
         }
-        return "".concat(baseClass, " ").concat(filled ? styles['textarea-default__block--filled'] : '');
+        return `${baseClass} ${filled ? styles['textarea-default__block--filled'] : ''}`;
     };
-    return (<textarea className={"".concat(getTextAreaClasses(), " ").concat(className || '')} value={textAreaValue} onChange={handleInputChange} {...props}/>);
+    return (<textarea className={`${getTextAreaClasses()} ${className || ''}`} value={textAreaValue} onChange={handleInputChange} {...props}/>);
 };
 export default TextArea;

@@ -1,0 +1,79 @@
+@import "../../styles/mixin.module";
+@import "../../styles/variable.module";
+
+@mixin badge-base-styles() {
+  @include size();
+  @include flex(null, null);
+  @include padding(1rem, 2rem, 1rem, 2rem);
+  @include border-radius(32px);
+}
+
+/* Classe BEM pour le badge warning */
+.badge-warning {
+  &__block {
+    // Styles pour le bloc principal (badge)
+    @include badge-base-styles();
+
+    &--default {
+      // Styles pour l'état par défaut
+      color: map-get(map-get($badge, warning), color);
+      background-color: map-get(map-get($badge, warning), background-color);
+    }
+  }
+}
+
+/* Classe BEM pour le badge in-progress */
+.badge-in-progress {
+  &__block {
+    // Styles pour le bloc principal (badge)
+    @include badge-base-styles();
+
+    &--default {
+      // Styles pour l'état par défaut
+      color: map-get(map-get($badge, in-progress), color);
+      background-color: map-get(map-get($badge, in-progress), background-color);
+    }
+  }
+}
+
+/* Classe BEM pour le badge success */
+.badge-success {
+  &__block {
+    // Styles pour le bloc principal (badge)
+    @include badge-base-styles();
+
+    &--default {
+      // Styles pour l'état par défaut
+      color: map-get(map-get($badge, success), color);
+      background-color: map-get(map-get($badge, success), background-color);
+    }
+  }
+}
+
+/* Classe BEM pour le badge error */
+.badge-error {
+  &__block {
+    // Styles pour le bloc principal (badge)
+    @include badge-base-styles();
+
+    &--default {
+      // Styles pour l'état par défaut
+      color: map-get(map-get($badge, error), color);
+      background-color: map-get(map-get($badge, error), background-color);
+    }
+  }
+}
+
+/* Classe BEM pour le badge personnalisé */
+.badge-personnalized {
+  &__block {
+    // Styles pour le bloc principal (badge)
+    @include badge-base-styles();
+
+    &--default {
+      // Styles pour l'état par défaut
+      color: map-get(map-get($badge, personnalized), color);
+      background-color: map-get(map-get($badge, personnalized), background-color);
+    }
+  }
+}

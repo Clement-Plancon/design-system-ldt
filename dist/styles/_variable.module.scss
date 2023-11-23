@@ -1,0 +1,618 @@
+/* GENERAL */ 
+ 
+/* COLOR */
+  /* basis */
+  $basis-colors:(
+    primary:(
+      color:#000091
+    ),
+    secondary:(
+      color:#FFFFFF
+    ),
+    third:(
+      color:#FCFCFD
+    ),
+  );
+  
+   /* --------------- BUTTON --------------- */
+   $primary-button-colors: (
+      default: (
+        color: #FFFFFF,
+        background-color: #000091,
+        border: 0px solid #6A6AF4,
+      ),
+      hover: (
+        color: #FFFFFF,
+        background-color: #2323FF
+      ),
+      focus: (
+        color: #FFF,
+        background-color: #000091,
+        border: 2px solid #6A6AF4,
+      ),
+      disabled: (
+        color: #FFFFFF,
+        background-color: #CACAFB
+      ),
+    );
+  
+   $secondary-button-colors: (
+      default: (
+        color: #000091,
+        background-color: #FFFFFF,
+        border: 1px solid #000091,
+      ),
+      hover: (
+        color: #000091,
+        background-color: #EAECF0,
+        border: 1px solid #000091,
+      ),
+      focus: (
+        color: #000091,
+        background-color: #EAECF0,
+        border: 1px solid #6A6AF4,
+      ),
+      disabled: (
+        color: #98A2B3,
+        background-color: #EAECF0,
+        border: 1px solid #F2F4F7,
+      ),
+    );
+
+   $secondary-button-colors-borderless: (
+      default: (
+        color: #000091,
+        background-color: #FFFFFF,
+        border: 0px solid #000091,
+      ),
+      hover: (
+        color: #000091,
+        background-color: #EAECF0,
+        border: 0px solid #000091,
+      ),
+      focus: (
+        color: #000091,
+        background-color: #EAECF0,
+        border: 1px solid #6A6AF4,
+      ),
+      disabled: (
+        color: #98A2B3,
+        background-color: #FFF,
+        border: 0px solid #F2F4F7,
+      ),
+    );
+  
+   $tertiary-button-colors: (
+      default: (
+        color: #475467,
+        background-color: #FFFFFF,
+        border: 1px solid #D0D5DD,
+      ),
+      hover: (
+        color: #475467,
+        background-color: #D0D5DD,
+        border: 1px solid #D0D5DD,
+      ),
+      focus: (
+        color: #475467,
+        background-color: #FFFFFF,
+        border: 1px solid #6A6AF4,
+      ),
+      disabled: (
+        color: #98A2B3,
+        background-color: #F2F4F7,
+        border: 1px solid #EAECF0,
+      ),
+    );
+
+   $tertiary-button-colors-borderless: (
+      default: (
+        color: #475467,
+        background-color: #FFFFFF,
+        border: 0px solid #D0D5DD,
+      ),
+      hover: (
+        color: #475467,
+        background-color: #D0D5DD,
+        border: 0px solid #D0D5DD,
+      ),
+      focus: (
+        color: #475467,
+        background-color: #FFFFFF,
+        border: 1px solid #6A6AF4,
+      ),
+      disabled: (
+        color: #FFF,
+        background-color: #F2F4F7,
+        border: 0px solid #EAECF0,
+      ),
+    );
+  
+   /* --------------- DESTRUCTIVE BUTTON --------------- */
+
+   $primary-destructive-button-colors: (
+      default: (
+        color: #FFFFFF,
+        background-color: #CE0500,
+        border: 0px solid #6A6AF4,
+      ),
+      hover: (
+        color: #FFFFFF,
+        background-color: #900501
+      ),
+      focus: (
+        color: #FFF,
+        background-color: #CE0500,
+        border: 2px solid #FFE9E9,
+      ),
+      disabled: (
+        color: #FFFFFF,
+        background-color: #FFE9E9
+      ),
+    );
+  
+   $secondary-destructive-button-colors: (
+      default: (
+        color: #CE0500,
+        background-color: #FFE9E9,
+        border: 1px solid #CE0500,
+      ),
+      hover: (
+        color: #CE0500,
+        background-color: #EAECF0,
+        border: 1px solid #CE0500,
+      ),
+      focus: (
+        color: #CE0500,
+        background-color: #EAECF0,
+        border: 1px solid #CE0500,
+      ),
+      disabled: (
+        color: #EAECF0,
+        background-color: #F2F4F7,
+        border: 1px solid #EAECF0,
+      ),
+    );
+
+   $secondary-destructive-button-colors-borderless: (
+      default: (
+        color: #CE0500,
+        background-color: #FFFFFF,
+        border: 0px solid #000091,
+      ),
+      hover: (
+        color: #CE0500,
+        background-color: #FFE9E9,
+        border: 0px solid #000091,
+      ),
+      focus: (
+        color: #CE0500,
+        background-color: #FFF,
+        border: 2px solid #CE0500,
+      ),
+      disabled: (
+        color: #98A2B3,
+        background-color: #FFF,
+        border: 0px solid #F2F4F7,
+      ),
+    );
+  
+   $tertiary-destructive-button-colors: (
+      default: (
+        color: #475467,
+        background-color: #FFFFFF,
+        border: 1px solid #D0D5DD,
+      ),
+      hover: (
+        color: #CE0500,
+        background-color: #D0D5DD,
+        border: 1px solid #D0D5DD,
+      ),
+      focus: (
+        color: #475467,
+        background-color: #FFFFFF,
+        border: 2px solid #CE0500,
+      ),
+      disabled: (
+        color: #98A2B3,
+        background-color: #F2F4F7,
+        border: 1px solid #EAECF0,
+      ),
+    );
+
+   $tertiary-destructive-button-colors-borderless: (
+      default: (
+        color: #475467,
+        background-color: #FFFFFF,
+        border: 0px solid #D0D5DD,
+      ),
+      hover: (
+        color: #CE0500,
+        background-color: #D0D5DD,
+        border: 0px solid #D0D5DD,
+      ),
+      focus: (
+        color: #475467,
+        background-color: #FFFFFF,
+        border: 2px solid #CE0500,
+      ),
+      disabled: (
+        color: #FFF,
+        background-color: #F2F4F7,
+        border: 0px solid #EAECF0,
+      ),
+    );
+
+   /* --------------- MODE SWITCH --------------- */
+   $mode-switch: (
+     default: (
+      background-color: #FFF,
+      border-top: 1px solid #D0D5DD,
+      border-right: 1px solid #D0D5DD,
+      border-bottom: 1px solid #D0D5DD,
+    ),
+    hover: (
+      background-color: #EAECF0,
+      border-top: 1px solid #D0D5DD,
+      border-right: 1px solid#D0D5DD,
+      border-bottom: 1px solid#D0D5DD
+    ),
+    selection: (
+      background-color: #ECECFE,
+      border-top: 1px solid #D0D5DD,
+      border-right: 1px solid#D0D5DD,
+      border-bottom: 1px solid#D0D5DD
+    ),
+  );
+   
+   /* --------------- TAB --------------- */
+   $tab: (
+    default: (
+      color: #475467,
+      background-color: #FFFFFF,
+      border: 0px solid #D0D5DD,
+    ),
+    hover: (
+      color: #475467,
+      background-color: #EAECF0,
+      border: 0px solid #D0D5DD,
+    ),
+    selection: (
+      color: #000091,
+      background-color: #ECECFE,
+      border: 0px solid #6A6AF4,
+    ),
+  );
+
+
+   /* --------------- TAB TEXT --------------- */
+   $tab-text: (
+    default: (
+      color: #475467,
+      background-color: #FFFFFF,
+      border: 0px solid #D0D5DD,
+    ),
+    hover: (
+      color: #475467,
+      background-color: #EAECF0,
+      border: 0px solid #D0D5DD,
+    ),
+    selection: (
+      color: #000091,
+      background-color: #ECECFE,
+      border-bottom: 1px solid #000091,
+    ),
+  );
+
+   /* --------------- BADGE --------------- */
+   $badge: (
+      warning: (
+        color: #B34000,
+        background-color: #FFEEE5
+      ),
+      in-progress: (
+        color: #0063CB,
+        background-color: #E8EDFF
+      ),
+       success: (
+        color: #18753C,
+        background-color: #B8FEC9
+      ),
+      error: (
+        color: #CE0500,
+        background-color: #FFE9E9
+      ),
+      personnalized: (
+        color: #667085,
+        background-color: #F2F4F7
+      )
+    );
+
+     /* --------------- CHECKBOX --------------- */
+   $checkbox: (
+    unchecked: (
+      color: #FFF,
+      background-color: #FFF,
+      border:1px solid #475467,
+    ),
+    checked: (
+      color: #FFF,
+      background-color: #000091,
+      border:0px solid #475467,
+    ),
+  );
+
+     /* --------------- TEXTAREA --------------- */
+     $textarea: (
+      default: (
+        color: #667085,
+        background-color: #FFF,
+        border:1px solid #D0D5DD,
+      ),
+      filled: (
+        color: #101828,
+        background-color: #FFF,
+        border:1px solid #D0D5DD,
+      ),
+      hover: (
+        color: #667085,
+        background-color: #EAECF0,
+        border:1px solid #D0D5DD,
+      ),
+      focus: (
+        color: #101828,
+        background-color: #FFF,
+        border:1px solid #6A6AF4,
+      ),
+      disabled: (
+        color: #98A2B3,
+        background-color: #F2F4F7,
+        border:1px solid #D0D5DD,
+      ),
+    );
+
+     $textarea-error: (
+      default: (
+        color: #667085,
+        background-color: #FFF,
+        border:1px solid #CE0500,
+      ),
+      filled: (
+        color: #101828,
+        background-color: #FFF,
+        border:1px solid #CE0500,
+      ),
+      hover: (
+        color: #667085,
+        background-color: #EAECF0,
+        border:1px solid #CE0500,
+      ),
+      focus: (
+        color: #101828,
+        background-color: #FFF,
+        border:2px solid #CE0500,
+      ),
+      disabled: (
+        color: #98A2B3,
+        background-color: #F2F4F7,
+        border:1px solid #CE0500,
+      ),
+    );
+
+  /* --------------- TOAST --------------- */
+  $toast: (
+    success: (
+      color: #18753C,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    error: (
+      color: #CE0500,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    warning: (
+      color: #B34000,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    info: (
+      color: #0063CB,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    misc: (
+      color: #475467,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+  );
+
+  /* --------------- INPUT FIELD --------------- */
+  $input-field-default: (
+    placeholder: (
+      color: #667085,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    filled: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    hover: (
+      color: #667085,
+      background-color: #EAECF0,
+      border:1px solid #D0D5DD,
+    ),
+    focus: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #6A6AF4,
+    ),
+    disabled: (
+      color: #98A2B3,
+      background-color: #F2F4F7,
+      border:1px solid #F2F4F7,
+    ),
+  );
+
+  $input-field-error: (
+    placeholder: (
+      color: #667085,
+      background-color: #FFF,
+      border:1px solid #CE0500,
+    ),
+    filled: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #CE0500,
+    ),
+    hover: (
+      color: #667085,
+      background-color: #EAECF0,
+      border:1px solid #CE0500,
+    ),
+    focus: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #CE0500,
+    ),
+    disabled: (
+      color: #98A2B3,
+      background-color: #F2F4F7,
+      border:1px solid #CE0500,
+    ),
+  );
+
+   /* --------------- INPUT DROPDOWN --------------- */
+   $input-dropdown-default: (
+    placeholder: (
+      color: #667085,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    filled: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    hover: (
+      color: #667085,
+      background-color: #EAECF0,
+      border:1px solid #D0D5DD,
+    ),
+    focus: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #6A6AF4,
+    ),
+    disabled: (
+      color: #98A2B3,
+      background-color: #F2F4F7,
+      border:1px solid #F2F4F7,
+    ),
+  );
+
+  $input-dropdown-error: (
+    placeholder: (
+      color: #667085,
+      background-color: #FFF,
+      border:1px solid #CE0500,
+    ),
+    filled: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #CE0500,
+    ),
+    hover: (
+      color: #667085,
+      background-color: #EAECF0,
+      border:1px solid #CE0500,
+    ),
+    focus: (
+      color: #101828,
+      background-color: #FFF,
+      border:1px solid #CE0500,
+    ),
+    disabled: (
+      color: #98A2B3,
+      background-color: #F2F4F7,
+      border:1px solid #CE0500,
+    ),
+  );
+
+  /* --------------- CHIP --------------- */
+  $chip-checkbox: (
+    default: (
+      color: #475467,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    hover: (
+      color: #475467,
+      background-color: #EAECF0,
+      border:1px solid #D0D5DD,
+    ),
+    selected: (
+      color: #000091,
+      background-color: #ECECFE,
+      border:1px solid #6A6AF4,
+    ),
+    disabled: (
+      color: #98A2B3,
+      background-color: #F2F4F7,
+      border:1px solid #EAECF0,
+    ),
+  );
+
+  $chip-radio: (
+    default: (
+      color: #475467,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    hover: (
+      color: #475467,
+      background-color: #EAECF0,
+      border:1px solid #D0D5DD,
+    ),
+    selected: (
+      color: #000091,
+      background-color: #ECECFE,
+      border:1px solid #6A6AF4,
+    ),
+    disabled: (
+      color: #98A2B3,
+      background-color: #F2F4F7,
+      border:1px solid #EAECF0,
+    ),
+  );
+  /* --------------- FILTER --------------- */
+  $filter: (
+    default: (
+      color: #475467,
+      background-color: #FFF,
+      border:1px solid #D0D5DD,
+    ),
+    hover: (
+      color: #475467,
+      background-color: #EAECF0,
+      border:1px solid #D0D5DD,
+    ),
+    focus: (
+      color: #475467,
+      background-color: #FFF,
+      border:2px solid #6A6AF4,
+    ),
+    filled: (
+      color: #000091,
+      background-color: #ECECFE,
+      border:1px solid #6A6AF4,
+    ),
+  );
+
+   /* ----------------------- COLOR DARK MODE ------------------------ */
+  
+   /* basis darkmode */
+   $darkMode: true; // Basculer entre true (mode sombre) et false (mode clair)

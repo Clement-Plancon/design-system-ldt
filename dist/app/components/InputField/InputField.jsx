@@ -11,18 +11,18 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import React, { useState } from 'react';
 import styles from './input-field.module.scss';
-var InputField = function (_a) {
-    var placeholder = _a.placeholder, value = _a.value, onChange = _a.onChange, _b = _a.error, error = _b === void 0 ? false : _b, _c = _a.disabled, disabled = _c === void 0 ? false : _c, customIcon = _a.customIcon, className = _a.className, props = __rest(_a, ["placeholder", "value", "onChange", "error", "disabled", "customIcon", "className"]);
-    var _d = useState(value), inputValue = _d[0], setInputValue = _d[1];
-    var handleInputChange = function (event) {
-        var newValue = event.target.value;
+const InputField = (_a) => {
+    var { placeholder, value, onChange, error = false, disabled = false, customIcon, className } = _a, props = __rest(_a, ["placeholder", "value", "onChange", "error", "disabled", "customIcon", "className"]);
+    const [inputValue, setInputValue] = useState(value);
+    const handleInputChange = (event) => {
+        const newValue = event.target.value;
         setInputValue(newValue);
         onChange(newValue);
     };
-    var defaultClasses = "".concat(styles['input-field-default__block'], " ").concat(styles['input-field-default__block--default']);
-    var errorClasses = error ? "".concat(styles['input-field-default-error__block'], " ").concat(styles['input-field-default-error__block--default']) : '';
-    var disabledClasses = disabled ? 'disabled' : ''; // Notez que c'est simplement un nom de classe
-    var inputClasses = "".concat(defaultClasses, " ").concat(errorClasses, " ").concat(disabledClasses, " ").concat(className || '');
+    const defaultClasses = `${styles['input-field-default__block']} ${styles['input-field-default__block--default']}`;
+    const errorClasses = error ? `${styles['input-field-default-error__block']} ${styles['input-field-default-error__block--default']}` : '';
+    const disabledClasses = disabled ? 'disabled' : ''; // Notez que c'est simplement un nom de classe
+    const inputClasses = `${defaultClasses} ${errorClasses} ${disabledClasses} ${className || ''}`;
     return (<input className={inputClasses} placeholder={placeholder} value={inputValue} onChange={handleInputChange} {...props} disabled={disabled} // Ajoutez l'attribut disabled ici
     />);
 };

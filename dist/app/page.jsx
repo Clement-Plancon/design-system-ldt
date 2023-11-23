@@ -43,12 +43,12 @@ export default function Home() {
       <h1>Composant - Checkbox</h1>
       <Checkbox label='checkbox'></Checkbox>
       <h1>Composant - TextArea</h1>
-      <TextArea value="text area" onChange={function (event) {
-            var nouveauTexte = event;
+      <TextArea value="text area" onChange={(event) => {
+            const nouveauTexte = event;
         }}/>
 
-      <TextArea value="text area" error={true} onChange={function (event) {
-            var nouveauTexte = event;
+      <TextArea value="text area" error={true} onChange={(event) => {
+            const nouveauTexte = event;
         }}/>
       <h1>Composant - Toast</h1>
       <Toast messageAction="Action" message="test" type="success"></Toast>
@@ -58,24 +58,24 @@ export default function Home() {
       <Toast messageAction="Action" message="test" type="misc"></Toast>
       <h1>Composant - Input field</h1>
 
-      <InputField placeholder="je cherche" value="taper votre texte ici" onChange={function (event) {
-            var nouveauTexte = event;
+      <InputField placeholder="je cherche" value="taper votre texte ici" onChange={(event) => {
+            const nouveauTexte = event;
         }}></InputField>
-      <InputField placeholder="je cherche" value="taper votre texte ici" error={true} onChange={function (event) {
-            var nouveauTexte = event;
+      <InputField placeholder="je cherche" value="taper votre texte ici" error={true} onChange={(event) => {
+            const nouveauTexte = event;
         }}></InputField>
-      <InputField placeholder="je cherche" value="taper votre texte ici" disabled={true} onChange={function (event) {
-            var nouveauTexte = event;
+      <InputField placeholder="je cherche" value="taper votre texte ici" disabled={true} onChange={(event) => {
+            const nouveauTexte = event;
         }}></InputField>
 
       <h1>Composant - Input Dropdown</h1>
-      <InputDropdown placeholder="je cherche" value="taper votre texte" onChange={function (event) {
-            var nouveauTexte = event;
+      <InputDropdown placeholder="je cherche" value="taper votre texte" onChange={(event) => {
+            const nouveauTexte = event;
         }}>
         <Chip type="checkbox" label="Check me" id="check1" name="check1"/>
       </InputDropdown>
-      <InputDropdown error={true} placeholder="je cherche" value="taper votre texte" onChange={function (event) {
-            var nouveauTexte = event;
+      <InputDropdown error={true} placeholder="je cherche" value="taper votre texte" onChange={(event) => {
+            const nouveauTexte = event;
         }}>
         <RadioGroup>
           <Chip type="radio" label="Option 1" id="option1" name="group1"/>
@@ -84,8 +84,8 @@ export default function Home() {
         </RadioGroup>
 
       </InputDropdown>
-      <InputDropdown disabled placeholder="je cherche" value="taper votre texte" onChange={function (event) {
-            var nouveauTexte = event;
+      <InputDropdown disabled placeholder="je cherche" value="taper votre texte" onChange={(event) => {
+            const nouveauTexte = event;
         }}></InputDropdown>
 
       <h1>Composant - Chip</h1>

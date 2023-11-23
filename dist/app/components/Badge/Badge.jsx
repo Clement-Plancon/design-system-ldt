@@ -11,22 +11,22 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import React from 'react';
 import styles from './badge.module.scss';
-var warningIcon = '/src/images/badge/warning.svg';
-var inProgressIcon = '/src/images/badge/in-progress.svg';
-var successIcon = '/src/images/badge/success.svg';
-var errorIcon = '/src/images/badge/error.svg';
-var personnalizedIcon = '/src/images/badge/personnalized.svg';
-var Badge = function (_a) {
-    var text = _a.text, badgeType = _a.badgeType, className = _a.className, props = __rest(_a, ["text", "badgeType", "className"]);
-    var badgeClasses = [
-        styles["badge-".concat(badgeType, "__block")],
+const warningIcon = '/src/images/badge/warning.svg';
+const inProgressIcon = '/src/images/badge/in-progress.svg';
+const successIcon = '/src/images/badge/success.svg';
+const errorIcon = '/src/images/badge/error.svg';
+const personnalizedIcon = '/src/images/badge/personnalized.svg';
+const Badge = (_a) => {
+    var { text, badgeType, className } = _a, props = __rest(_a, ["text", "badgeType", "className"]);
+    const badgeClasses = [
+        styles[`badge-${badgeType}__block`],
         className
     ];
-    var badgeClassesBlock = [
-        styles["badge-".concat(badgeType, "__block--default")],
+    const badgeClassesBlock = [
+        styles[`badge-${badgeType}__block--default`],
         className
     ];
-    var getIconBadgeSrc = function () {
+    const getIconBadgeSrc = () => {
         switch (badgeType) {
             case 'warning':
                 return warningIcon;
@@ -42,7 +42,7 @@ var Badge = function (_a) {
                 return undefined;
         }
     };
-    return (<div className={"".concat(badgeClasses.join(' '), " ").concat(badgeClassesBlock.join(' '))} {...props}>
+    return (<div className={`${badgeClasses.join(' ')} ${badgeClassesBlock.join(' ')}`} {...props}>
       <img src={getIconBadgeSrc()} alt="icone badge"/>
       {text}
     </div>);

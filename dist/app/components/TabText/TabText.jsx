@@ -11,9 +11,9 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import React from 'react';
 import styles from './tab-text.module.scss';
-var TabText = function (_a) {
-    var label = _a.label, className = _a.className, props = __rest(_a, ["label", "className"]);
-    return (<div className={"".concat(styles['tab-text__block'], " ").concat(styles['tab-text__block--default'], " ").concat(className)} {...props}>
+const TabText = (_a) => {
+    var { label, className } = _a, props = __rest(_a, ["label", "className"]);
+    return (<div className={`${styles['tab-text__block']} ${styles['tab-text__block--default']} ${className}`} {...props}>
       {label}
     </div>);
 };

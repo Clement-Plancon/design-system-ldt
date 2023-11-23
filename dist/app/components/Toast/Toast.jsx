@@ -3,18 +3,17 @@
 import React, { useState } from 'react';
 import styles from './toast.module.scss';
 import successIcon from '../../../public/src/images/toast/success.svg'; // Chemin relatif mis à jour
-var errorIcon = '/src/images/toast/error.svg';
-var warningIcon = '/src/images/toast/warning.svg';
-var infoIcon = '/src/images/toast/information.svg';
-var crossIcon = '/src/images/toast/cross.svg';
-var Toast = function (_a) {
-    var type = _a.type, message = _a.message, messageAction = _a.messageAction, _b = _a.className, className = _b === void 0 ? '' : _b, onClick = _a.onClick;
-    var _c = useState(true), toastVisible = _c[0], setToastVisible = _c[1];
+const errorIcon = '/src/images/toast/error.svg';
+const warningIcon = '/src/images/toast/warning.svg';
+const infoIcon = '/src/images/toast/information.svg';
+const crossIcon = '/src/images/toast/cross.svg';
+const Toast = ({ type, message, messageAction, className = '', onClick }) => {
+    const [toastVisible, setToastVisible] = useState(true);
     // Si toastVisible est false, retournez null pour ne rien rendre.
     if (!toastVisible) {
         return null;
     }
-    var getToastClass = function () {
+    const getToastClass = () => {
         switch (type) {
             case 'success':
                 return styles['toast__block--success'];
@@ -30,7 +29,7 @@ var Toast = function (_a) {
                 return '';
         }
     };
-    var getIconSrc = function () {
+    const getIconSrc = () => {
         switch (type) {
             case 'success':
                 return successIcon;
@@ -46,14 +45,14 @@ var Toast = function (_a) {
                 return undefined;
         }
     };
-    var deleteToast = function () {
+    const deleteToast = () => {
         setToastVisible(false);
     };
-    return (<div className={"".concat(styles.toast__block, " ").concat(getToastClass(), " ").concat(className)} onClick={onClick}>
+    return (<div className={`${styles.toast__block} ${getToastClass()} ${className}`} onClick={onClick}>
             <img src={getIconSrc()} alt={type} className={styles.toastIcon}/> 
             {message}
             <span className={styles['message-action']}>{messageAction}</span>
-            <img src={crossIcon} alt={'cross'} className={styles.toastIcon} onClick={function () { return deleteToast(); }}/> 
+            <img src={crossIcon} alt={'cross'} className={styles.toastIcon} onClick={() => deleteToast()}/> 
         </div>);
 };
 export default Toast;

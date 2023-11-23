@@ -11,24 +11,23 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import React, { useContext } from 'react';
 import styles from './tab.module.scss';
-var TabContext = React.createContext(null);
-export var TabGroup = function (_a) {
-    var _b = _a.defaultActive, defaultActive = _b === void 0 ? "" : _b, children = _a.children;
-    var _c = React.useState(defaultActive), activeTab = _c[0], setActiveTab = _c[1];
-    return (<TabContext.Provider value={{ activeTab: activeTab, setActiveTab: setActiveTab }}>
+const TabContext = React.createContext(null);
+export const TabGroup = ({ defaultActive = "", children }) => {
+    const [activeTab, setActiveTab] = React.useState(defaultActive);
+    return (<TabContext.Provider value={{ activeTab, setActiveTab }}>
       {children}
     </TabContext.Provider>);
 };
-var Tab = function (_a) {
-    var label = _a.label, className = _a.className, props = __rest(_a, ["label", "className"]);
-    var context = useContext(TabContext);
+const Tab = (_a) => {
+    var { label, className } = _a, props = __rest(_a, ["label", "className"]);
+    const context = useContext(TabContext);
     if (!context) {
         throw new Error("Un tab ne peut pas être utilisé sans TabGroup");
     }
-    var activeTab = context.activeTab, setActiveTab = context.setActiveTab;
-    var isActive = label === activeTab;
-    var activeClass = isActive ? styles['active'] : ''; // classe pour l'état actif
-    return (<div className={"".concat(styles['tab__block'], " ").concat(styles['tab__block--default'], " ").concat(className, " ").concat(activeClass)} onClick={function () { return setActiveTab(label); }} {...props}>
+    const { activeTab, setActiveTab } = context;
+    const isActive = label === activeTab;
+    const activeClass = isActive ? styles['active'] : ''; // classe pour l'état actif
+    return (<div className={`${styles['tab__block']} ${styles['tab__block--default']} ${className} ${activeClass}`} onClick={() => setActiveTab(label)} {...props}>
       {label}
     </div>);
 };

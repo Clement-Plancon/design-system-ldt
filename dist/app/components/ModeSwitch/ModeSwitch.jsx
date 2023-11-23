@@ -10,30 +10,30 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import React, { useState, useEffect } from 'react';
-var sunActiveIcon = '/src/images/mode-switch/sun-on.svg';
-var moonActiveIcon = '/src/images/mode-switch/moon-on.svg';
-var sunInactiveIcon = '/src/images/mode-switch/sun-off.svg';
-var moonInactiveIcon = '/src/images/mode-switch/moon-off.svg';
-var ModeSwitch = function (_a) {
-    var className = _a.className, props = __rest(_a, ["className"]);
-    var _b = useState(true), isLightMode = _b[0], setIsLightMode = _b[1];
-    useEffect(function () {
+const sunActiveIcon = '/src/images/mode-switch/sun-on.svg';
+const moonActiveIcon = '/src/images/mode-switch/moon-on.svg';
+const sunInactiveIcon = '/src/images/mode-switch/sun-off.svg';
+const moonInactiveIcon = '/src/images/mode-switch/moon-off.svg';
+const ModeSwitch = (_a) => {
+    var { className } = _a, props = __rest(_a, ["className"]);
+    const [isLightMode, setIsLightMode] = useState(true);
+    useEffect(() => {
         // Récupérer la valeur du mode depuis le local storage lors du chargement initial de la composante.
-        var storedMode = localStorage.getItem('themeMode');
+        const storedMode = localStorage.getItem('themeMode');
         if (storedMode === 'dark') {
             setIsLightMode(false);
         }
     }, []);
-    var toggleMode = function () {
+    const toggleMode = () => {
         // Inverser le mode.
-        setIsLightMode(function (prevMode) {
-            var newMode = !prevMode;
+        setIsLightMode((prevMode) => {
+            const newMode = !prevMode;
             // Stocker le nouveau mode dans le local storage.
             localStorage.setItem('themeMode', newMode ? 'light' : 'dark');
             return newMode;
         });
     };
-    return (<div className={"mode-switch ".concat(isLightMode ? 'light-mode' : 'dark-mode', " ").concat(className)} onClick={toggleMode} {...props}>
+    return (<div className={`mode-switch ${isLightMode ? 'light-mode' : 'dark-mode'} ${className}`} onClick={toggleMode} {...props}>
       <img src={isLightMode ? moonActiveIcon : sunActiveIcon} alt={isLightMode ? 'Dark Mode' : 'Light Mode'}/>
     </div>);
 };

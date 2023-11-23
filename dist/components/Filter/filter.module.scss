@@ -1,0 +1,42 @@
+@import "../../styles/mixin.module";
+@import "../../styles/variable.module";
+
+@mixin filter-base-styles() {
+  @include size();
+  @include flex(center, center);
+  @include padding(1rem, 2rem, 1rem, 2rem);
+  @include border-radius(8px);
+}
+
+/* Classe BEM pour le filter */
+.filter {
+    &__block {
+      // Styles pour le bloc principal (filter)
+      @include filter-base-styles();
+  
+      &--default {
+        // Styles pour l'état par défaut
+        color: map-get(map-get($filter, default), color);
+        background-color: map-get(map-get($filter, default), background-color);
+        border: map-get(map-get($filter, default), border);
+        &:hover {
+          // Styles pour l'état hover
+          color: map-get(map-get($filter, hover), color);
+          background-color: map-get(map-get($filter, hover), background-color);
+          border: map-get(map-get($filter, hover), border);
+        }
+        &:focus {
+          // Styles pour l'état focus
+          color: map-get(map-get($filter, focus), color);
+          background-color: map-get(map-get($filter, focus), background-color);
+          border: map-get(map-get($filter, focus), border);
+        }
+        &--filled {
+          // Styles pour l'état focus
+          color: map-get(map-get($filter, filled), color);
+          background-color: map-get(map-get($filter, filled), background-color);
+          border: map-get(map-get($filter, filled), border);
+        }
+      }
+    }
+  }

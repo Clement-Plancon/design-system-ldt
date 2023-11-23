@@ -1,6 +1,6 @@
 {
   "name": "design-system-ldt",
-  "version": "0.2.3",
+  "version": "0.2.6",
   "main": "dist/bundle.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -12,7 +12,8 @@
     "clean": "rimraf dist",
     "tsc-build": "tsc --outDir dist",
     "webpack-build": "webpack",
-    "lib-build": "npm run clean && npm run tsc-build && npm run webpack-build"
+    "babel-transpile": "npx babel app --out-dir dist --extensions '.js,.jsx,.ts,.tsx' --ignore '**/*.d.ts' --copy-files",
+    "lib-build": "npm run clean && npm run tsc-build && npm run babel-transpile && npm run webpack-build"
   },
   "peerDependencies": {
     "react": "latest",
@@ -24,6 +25,7 @@
     "sass": "^1.68.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.4",
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
