@@ -8,7 +8,7 @@ module.exports = {
       {
         test: /\.(tsx?|jsx)$/,  // Mise à jour de cette ligne pour inclure JSX
         use: 'babel-loader',
-        exclude: /node_modules/,
+        exclude: /node_modules\/(?!design-system-ldt)/,
       },
       {
         test: /\.s[ac]ss$/i,
