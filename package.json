@@ -1,6 +1,6 @@
 {
   "name": "design-system-ldt",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "main": "dist/bundle.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -9,10 +9,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "rimraf dist",
-    "tsc-build": "tsc --outDir temp",
-    "webpack-build": "webpack",
-    "lib-build": "npm run clean && npm run tsc-build && npm run webpack-build"
+    "builder": "rimraf dist && rimraf temp && tsc --outDir temp && webpack && rimraf temp",
+    "gitlab": "git add . && git commit -m 'update library webpack' && git push",
+    "lib-build": "npm run builder && npm run gitlab"
   },
   "peerDependencies": {
     "react": "latest",

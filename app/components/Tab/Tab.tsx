@@ -10,7 +10,7 @@ interface TabContextProps {
 const TabContext = React.createContext<TabContextProps | null>(null);
 
 // Composant pour le groupe d'onglets
-interface TabGroupProps {
+export interface TabGroupProps {
   children: React.ReactNode;
   defaultActive?: string;
 }
@@ -25,13 +25,12 @@ export const TabGroup: React.FC<TabGroupProps> = ({ defaultActive = "", children
   );
 };
 
-
 // Définition des props pour le composant Tab
 export interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
   label: string;
 }
 
-const Tab: React.FC<TabProps> = ({ label, className, ...props }) => {
+export const Tab: React.FC<TabProps> = ({ label, className, ...props }) => {
   const context = useContext(TabContext);
 
   if (!context) {
@@ -40,8 +39,8 @@ const Tab: React.FC<TabProps> = ({ label, className, ...props }) => {
 
   const { activeTab, setActiveTab } = context;
   const isActive = label === activeTab;
-  const activeClass = isActive ? styles['active'] : ''; // classe pour l'état actif
-  
+  const activeClass = isActive ? styles['active'] : ''; // Classe pour l'état actif
+
   return (
     <div 
       className={`${styles['tab__block']} ${styles['tab__block--default']} ${className} ${activeClass}`}
@@ -52,5 +51,3 @@ const Tab: React.FC<TabProps> = ({ label, className, ...props }) => {
     </div>
   );
 };
-
-export default Tab;
