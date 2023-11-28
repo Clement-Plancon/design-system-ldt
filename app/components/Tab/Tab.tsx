@@ -30,7 +30,7 @@ export interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
   label: string;
 }
 
-export const Tab: React.FC<TabProps> = ({ label, className, ...props }) => {
+export const Tab: React.FC<TabProps> = ({ label, className, children, ...props }) => {
   const context = useContext(TabContext);
 
   if (!context) {
@@ -39,7 +39,7 @@ export const Tab: React.FC<TabProps> = ({ label, className, ...props }) => {
 
   const { activeTab, setActiveTab } = context;
   const isActive = label === activeTab;
-  const activeClass = isActive ? styles['active'] : ''; // Classe pour l'état actif
+  const activeClass = isActive ? styles['active'] : '';
 
   return (
     <div 
@@ -47,7 +47,7 @@ export const Tab: React.FC<TabProps> = ({ label, className, ...props }) => {
       onClick={() => setActiveTab(label)}
       {...props}
     >
-      {label}
+      {children}
     </div>
   );
 };
