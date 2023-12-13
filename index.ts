@@ -11,7 +11,7 @@ import InputDropdown from './app/components/InputDropdown/InputDropdown';
 import InputField from './app/components/InputField/InputField';
 import ModeSwitch from './app/components/ModeSwitch/ModeSwitch';
 import * as TabComponents from './app/components/Tab/Tab';
-import TabText from './app/components/TabText/TabText';
+import { TabText } from './app/components/TabText/TabText';
 import TextArea from './app/components/TextArea/TextArea';
 import Toast from './app/components/Toast/Toast';
 
