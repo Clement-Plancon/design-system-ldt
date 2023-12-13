@@ -13,12 +13,13 @@
     &__block {
       // Styles pour le bloc principal (filter)
       @include filter-base-styles();
-  
       &--default {
         // Styles pour l'état par défaut
         color: map-get(map-get($filter, default), color);
         background-color: map-get(map-get($filter, default), background-color);
         border: map-get(map-get($filter, default), border);
+        cursor: pointer;
+        user-select: none;
         &:hover {
           // Styles pour l'état hover
           color: map-get(map-get($filter, hover), color);
